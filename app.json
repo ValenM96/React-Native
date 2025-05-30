@@ -1,7 +1,73 @@
 {
   "expo": {
-    "name": "FreshMarketExpo",
-    "slug": "FreshMarketExpo",
-    "version": "1.0.0"
+    "name": "FreshMarket",
+    "slug": "freshmarket",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#4CAF50"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.freshmarket.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Esta app necesita acceso a la cámara para tomar fotos de productos y reviews.",
+        "NSPhotoLibraryUsageDescription": "Esta app necesita acceso a la galería para seleccionar fotos de productos.",
+        "NSLocationWhenInUseUsageDescription": "Esta app necesita tu ubicación para calcular el delivery y mostrar tiendas cercanas."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#4CAF50"
+      },
+      "package": "com.freshmarket.app",
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "INTERNET",
+        "ACCESS_NETWORK_STATE"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-dev-client",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Esta app necesita ubicación para delivery."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Esta app necesita acceso a fotos para reviews de productos."
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Esta app necesita cámara para fotos de productos."
+        }
+      ],
+      "expo-sqlite"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "tu-project-id-aqui"
+      }
+    }
   }
 }
